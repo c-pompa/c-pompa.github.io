@@ -1,45 +1,290 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
+<!-- Begin head -->
+
 <head>
-  <meta charset="UTF-8">
-  <title>Activity 1: Basic HTML Bio</title>
+
+    <meta charset="UTF-8">
+    <!-- Title of Page -->
+    <title>Christian Pompa: Data Analyst</title>
+
+
+
+    <!-- <link rel="stylesheet" type="text/css" href="./resources/css/bootstrap.min.css"> -->
+    <script src="https://bossanova.uk/jexcel/v4/jexcel.js"></script>
+
+    <!-- Style Sheet(s) -->
+    <!-- CSS  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="./resources/css/test_style3.css">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171772634-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-171772634-1');
+    </script>
+
+
 </head>
 
-<body>
-  <!-- A Header with your name -->
-  <h2> Hello, My name is Christian Pompa</h2>
+<!-- Begin body -->
 
-  <!-- An image that you would like, maybe a headshot -->
-  <img src='LINKTOIMAGE' alt='Image of myself'>
-  <!-- A couple of paragraphs about yourself -->
-  <p>Here is a paragraph about myself.  </p>
-  <p>Here is a paragraph about myself.  </p>
-  <!-- An unordered list, containing your email, github, and linkedin links -->
-  <ul>
-    <li><strong>Email:</strong> <a href="mailto:pompa.chris@gmail.com">pompa.chris@gmail.com</a></li>
-    <li><strong>Github:</strong> <a href="https://github.com/c-pompa">c-pompa</a></li>
-    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/christianpompa/">linkedin.com/in/christianpompa</a></li>
-  </ul>
-  <!-- A table with some of your favorite things -->
-  <table border=1>
-    <tr>
-      <th>Movies</th>
-      <th>Games</th>
-    </tr>
-    <tr>
-      <td>Gravity</td>
-      <td>CS:GO</td>
-    </tr>
-    <tr>
-      <td>The Avengers</td>
-      <td>HL:Alyx</td>
-    </tr>
-    <tr>
-      <td>The Matrix</td>
-      <td>Monster Hunter</td>
-    </tr>
-  </table>
-  <!-- Bonus link to last class page -->
+<body>
+    <!-- Begin header -->
+    <header class='main-bg'>
+        <div class="container" id="header">
+            <div class="col-lg-11 nav-justified">
+
+                <nav class="navbar navbar-expand-md navbar-dark " role="navigation">
+                    <!-- button for smaller page -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="nav nav-pills ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about">ABOUT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#education">EDUCATION</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#projects">PROJECTS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">CONTACT</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <br><br><br>
+            <h1> Christian Pompa </h1>
+            <h5> DATA ANALYST </h5>
+        </div>
+    </header>
+
+    <!--about-->
+    <div class='about' id='firstbg'>
+        <div class='container'>
+            <div class='row align-items-center'>
+                <div class='col-md-7'>
+                    <h2 id='about'>about</h2>
+                    <div class="about-me-info">
+                        As a Data Analyst, I find joy in interpreting the unknown and sharing results both audibly and visibly. At a young age, I realized the creative freedom computers provided me. This freedom scratched the artistic side of my brain which led to my interest
+                        in web/graphic design along with education in visual effects for production. Additionally, this passion in technology, information and art nurtured my interest in the science of Data Analytics and the innovative avenues that flourished
+                        when merging all topics. <br><br>I consider myself an active listener who finds joy in learning new materials and tools for continued growth. Focusing on Python, Flask, Tableau and other various tools, I
+                        can identify and present strategic advantages through storytelling. Lastly, I earned my Bachelor’s of Science in Management degree from Pepperdine University and currently continuing my education by attending the University of
+                        Southern California for a certificate in Data Analytics.
+                    </div>
+                </div>
+                <div class='col-md'>
+                    <div class="text-center">
+                        <img src="./resources/images/me-800.jpg" class="img-site-resize border-bottom rounded" alt="christian-pompa" width='200'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--education-->
+    <div class='education' id='secondbg'>
+        <div class='container'>
+            <div class='row align-items-center'>
+                <div class='col-12'>
+                    <h2 id='education'>education</h2>
+                    <div class="education-info">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item logo-1">Currently Attending, Complete Sept 2020:
+                                <h3>Data Analytics: Continuing Education Certificate</h3>
+                                <h4>USC Viterbi School of Engineering</h4>
+                                Courses: <br>
+                                <ul class="list-inline" id='courses'>
+                                    <div class='row'>
+                                        <div class='col-sm'>
+                                            <li class="list-inline-item">
+                                                Fundamental Statistics: Modeling, Forcasting.
+                                            </li>
+                                            <li class="list-inline-item">
+                                                Python: Mining, Numpy, Pandas, Matplotlib, API.
+                                            </li>
+                                            <li class="list-inline-item">
+                                                Front-End Web Dev: HTML, CSS, Bootstrap, D3.
+                                            </li>
+
+
+                                        </div>
+                                        <div class='col-sm'>
+                                            <li class="list-inline-item">
+                                                Databases: SQL, MongoDB, Postgres, ETL
+                                            </li>
+                                            <li class="list-inline-item">
+                                                Business Intelligence: Tableau, Hadoop
+                                            </li>
+                                            <li class="list-inline-item">
+                                                Machine Learning
+                                            </li>
+                                        </div>
+                                        <div class='col-sm'>
+                                            <li class="list-inline-item">
+
+                                            </li>
+                                            <li class="list-inline-item">
+
+                                            </li>
+                                        </div>
+                                    </div>
+                                </ul>
+                                <img src="resources/images/usc-logo.png">
+                            </li>
+                            <li class="list-group-item logo-1">
+
+                                Feburary 2020:
+                                <h3>IBM Data Science Certificate</h3>
+                                <h4>Coursera</h4>
+                                Courses: <br>
+                                <ul class="list-inline" id='courses'>
+                                    <li class="list-inline-item">
+                                        9 Courses in: Data Science
+                                    </li>
+                                    <li class="list-inline-item">
+                                        Machine Learning
+                                    </li>
+                                    <li class="list-inline-item">
+                                        Python Programming
+                                    </li>
+                                    <li class="list-inline-item">
+                                        Data Analysis
+                                    </li>
+                                    <li class="list-inline-item">
+                                        Data Visualization (DataViz)
+                                    </li>
+                                </ul>
+                                <img src='resources/images/ibm-logo.png'>
+                            </li>
+                            <li class="list-group-item logo-1">June 2017:
+                                <h3>Bachelors of Science in Management</h3>
+                                <h4> Pepperdine University</h4>
+                                Courses:<br>
+                                <ul class="list-inline" id='courses'>
+                                    <div class='row'>
+                                        <div class='col-sm'>
+                                            <li class="list-inline-item">
+                                                Statistical Methods for Business
+                                            </li>
+                                            <li class="list-inline-item">
+                                                Critical Thinking/Managerial Problem Solving
+                                            </li>
+                                            <li class="list-inline-item">
+                                                Information Systems for Business & Management
+                                            </li>
+                                        </div>
+                                        <div class='col-sm'>
+                                            <li class="list-inline-item">
+                                                Production & Operations Management
+                                            </li>
+                                            <li class="list-inline-item">
+                                                Marketing Management
+                                            </li>
+                                            <li class="list-inline-item">
+                                                Business Strategy
+                                            </li>
+                                        </div>
+                                        <div class='col-sm'>
+
+
+
+                                        </div>
+                                    </div>
+                                </ul>
+                                <img src="resources/images/pepperdinelogo.png">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--projects-->
+
+    <div class='projects' id='firstbg'>
+        <div class='container'>
+            <div class='row align-items-center'>
+                <div class='col-12'>
+                    <h2 id='projects'>projects</h2>
+                    <br>
+                    <div class="projects-info">
+                        <div class="card mb-3 rounded ">
+                            <img class="card-img-top" src="./resources/images/csgo.jpg" alt="CSGO Project">
+                            <div class="card-body">
+                                <p class="card-title">CSGO Game State Integration Project</p>
+                                <p class="card-text">Obtain live game data feed. Organize data with the end goal to project player statistics and analysis. Player data can be retreived by round, player, or specific stat ie: mvps, kills, deaths, etc. Additional Flask pages
+                                    will be added over time to present competetive advantages. <br><strong><i>Key Tech:</strong> ETL, Python, MongoDB, Pandas, Cuda, Flask.</i>
+                                </p>
+
+                                <div class="container-lg my-3">
+                                    <!-- Trigger Button HTML -->
+                                    <input type="button" class="btn btn-primary" data-toggle="collapse" data-target="#myCollapsible" value="Details coming soon">
+                                    <!-- Collapsible Element HTML -->
+                                    <div id="myCollapsible" class="collapse">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--contact-->
+    <div class='contact' id='secondbg'>
+        <div class='container'>
+            <h2 id='contact'>contact</h2>
+            <div class="row row-sm-12">
+                <div class="col-4">
+                    <p>
+                        <h4>Email:</h4>
+                        <a href="mailto:chrispompaemail@gmail.com"><img src='./resources/images/email.png' alt='chrispompaemail@gmail.com' width='50'></a>
+                    </p>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <p>
+                        <h4>LinkedIn:</h4>
+                        <a href="https://www.linkedin.com/in/christianpompa/"><img src='./resources/images/linkedin.png' alt='https://www.linkedin.com/in/christianpompa/' width='50'></a>
+                    </p>
+                </div>
+                <div class="col-4">
+                    <p>
+                        <h4>Github:</h4>
+                        <a href="https://github.com/c-pompa"><img src='./resources/images/github.png' alt='https://github.com/c-pompa' width='50'></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Begin footer -->
+
 
 </body>
 
