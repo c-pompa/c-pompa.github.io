@@ -1,359 +1,311 @@
-/* Extra small devices (portrait phones, less than 576px)*/
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Christian Pompa — portfolio
+   One system, five colours: ink · paper · mist · line · accent
+   Everything else is one of those at a lower alpha. Nothing else.
+   The corner language is square: 4px on surfaces, 2px on controls.
+   ═══════════════════════════════════════════════════════════════════════════════ */
 
-
-/* No media query for `xs` since this is the default in Bootstrap*/
-
-
-/* Small devices (landscape phones, 576px and up)*/
-
-@media (max-width: 576px) {}
-
-
-/* Medium devices (tablets, 768px and up)*/
-
-@media (max-width: 768px) {
-    .img-site-resize {
-        margin-top: 15px;
-    }
+:root {
+    --ink: #0f172a;                     /* type, and the header band */
+    --paper: #ffffff;                   /* the page, and the inside of every box */
+    --mist: #f8fafc;                    /* the alternating quiet sections */
+    --line: #e2e8f0;                    /* every hairline */
+    --accent: #2563eb;                  /* the one hue */
+    --muted: rgba(15, 23, 42, .62);
+    --accent-soft: rgba(37, 99, 235, .10);
+    --accent-half: rgba(37, 99, 235, .45);
+    --on-ink: rgba(255, 255, 255, .72);
+    --elev: 0 1px 2px rgba(15, 23, 42, .07), 0 12px 28px -14px rgba(15, 23, 42, .42);
+    --radius: 4px;
+    --radius-sm: 2px;
+    --font: 'Roboto', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 
+* { box-sizing: border-box; }
 
-/* Large devices (desktops, 992px and up)*/
-
-@media (max-width: 992px) {
-    /* Header bg image */
-    header.main-bg {
-        position: relative;
-        background: white;
-        background-image: url("../images/bg1.jpg");
-        background-attachment: fixed;
-        background-position: top center;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-    .container {
-        max-width: 90%;
-    }
-}
-
-
-/* Extra large devices (large desktops, 1200px and up)*/
-
-
-/* @media (min-width: 1200px) { ... } */
-
-div.col-sm {
-    margin: 0px;
-    padding: 0px;
-}
-
-
-/* H Tags */
-
-h1 {
-    padding-left: 10%;
-    font-family: 'Roboto', sans-serif;
-    -webkit-text-stroke: .8px #002032;
-}
-
-h2 {
-    /* padding-top: 25px; */
-    color: #c6e2e6;
-    font-family: 'Roboto', sans-serif;
-}
-
-h3 {
-    color: white;
-}
-
-h4 {
-    color: #ADADAD;
-}
-
-h5 {
-    color: #002032;
-    padding-left: 10%;
-    text-decoration: underline;
-    text-decoration-color: #002032;
-    text-decoration-thickness: 4px;
-}
-
-
-/* ========== */
-
-
-/* Header bg image */
-
-.main-bg {
-    position: relative;
-    background: white;
-    background-image: url("../images/bg1.jpg");
-    background-attachment: fixed;
-    background-position: top center;
-    /* background-size: cover; */
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-
-
-/* Body and Header */
-
-body header {
-    width: 100%;
-}
-
-html {
-    background-color: black;
-    font-family: 'Roboto', sans-serif;
+html,
+body {
+    background-color: var(--paper);
+    font-family: var(--font);
+    color: var(--ink);
 }
 
 body {
-    background-color: black;
-    font-size: 14px;
-    color: white;
-    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
     position: relative;
 }
 
+h1, h2, h3, h4, h5 { font-family: var(--font); }
 
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent); text-decoration: underline; }
+
+div.col-sm { margin: 0; padding: 0; }
+
+/* ── header — a flat ink band; the photograph is gone ─────────────────────────── */
+
+header.main-bg {
+    position: relative;
+    background: var(--ink);
+    background-image: none;
 }
-header .navbar {
-    color: #002032;
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-}
-.navbar a {
-    color: #002032;
-    font-weight: bold;
-}
-.navbar a:hover {
-    color: white;
-}
+
 header #header {
-    height: 475px;
+    height: auto;
+    min-height: 0;
     width: 100%;
     margin: auto;
-    padding: 0px;
-    color: white;
+    padding: 1.25rem 0 3.5rem;
+    color: var(--paper);
 }
-header .row {
-    height: 100%;
-    color: white;
-    background-color: #252525;
-}
+
 header .navbar {
+    color: var(--paper);
     height: 100%;
+    font-family: var(--font);
 }
 
-/* Test Gradient */
-#firstbg {
+.navbar a {
+    color: var(--on-ink);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: .06em;
+    border-radius: var(--radius-sm);
+}
+
+/* Bootstrap's own .nav-pills / .navbar-dark rules outrank the rule above and would
+   leak their slate and their whites onto the nav — pin every state explicitly. */
+.navbar-dark .nav-pills .nav-link,
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--on-ink);
+    border-radius: var(--radius-sm);
+}
+
+.navbar-dark .nav-pills .nav-link:hover,
+.navbar-dark .nav-pills .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: var(--paper);
+    background: var(--accent);
+}
+
+.navbar a:hover {
+    color: var(--paper);
+    text-decoration: none;
+    background: var(--accent);
+}
+
+.navbar-dark .navbar-toggler { border-color: var(--on-ink); }
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: none;
     position: relative;
-    z-index: 1;
-    /* matters! */
-    
-    background: #002032;
-    transition: background 0.7s;
 }
-#firstbg::before {
-    content: "";
+
+.navbar-dark .navbar-toggler-icon::before {
+    content: "≡";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient( to bottom, transparent, #002032);
-    z-index: -1;
-}
-#firstbg:hover {
-    background: #0a4263;
+    left: 7px;
+    top: -2px;
+    color: var(--paper);
+    font-size: 24px;
+    line-height: 1;
 }
 
-/*  */
-#secondbg {
-    background-color: black;
+header h1 {
+    padding-left: 0;
+    margin: 0;
+    color: var(--paper);
+    font-size: 2.6rem;
+    font-weight: 700;
+    -webkit-text-stroke: 0;
 }
 
-/* About me */
-.about {
-    height: 100%;
-    padding-bottom: 20px;
+header h5 {
+    padding-left: 0;
+    margin: .35rem 0 0;
+    color: var(--accent);
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-decoration: none;
 }
 
-/* hover over div, underline */
-div.container:hover h2 {
-    text-decoration: underline;
-    text-decoration-color: #38b0c9;
-    text-decoration-thickness: 4px;
-}
+/* ── sections ────────────────────────────────────────────────────────────────── */
 
-/* ################# Container Changes #############*/
 div.container {
+    max-width: 1100px;
     padding-top: 35px;
     padding-bottom: 35px;
 }
-div.container-lg,
-.my-3 {
-    padding: 10px;
-    padding-left: 25px;
-}
-.about-me-info {
-    /* background-color: pink; */
-    
-    margin-left: 5%;
-    width: 100%;
-    color: white;
+
+#firstbg { background: var(--paper); }
+#secondbg { background: var(--mist); }
+#firstbg::before { content: none; }
+#firstbg:hover { background: var(--paper); }
+
+h2 {
+    display: inline-block;
+    margin-bottom: 1.25rem;
+    padding-bottom: .3rem;
+    color: var(--ink);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: .02em;
+    border-bottom: 4px solid var(--accent);
 }
 
-/* Education */
-.education {
-    background-color: green;
-    height: 100%;
-    color: white;
+div.container:hover h2 { text-decoration: none; }
+
+h3 { color: var(--ink); font-size: 1.05rem; font-weight: 600; margin: .5rem 0 .15rem; }
+h4 { color: var(--muted); font-size: .9rem; font-weight: 500; margin: 0 0 .5rem; }
+
+.about, .education, .projects, .contact { height: auto; padding-bottom: 20px; }
+
+.about-me-info {
+    margin-left: 0;
+    width: 100%;
+    max-width: 70ch;
+    color: var(--muted);
+    font-size: 15px;
 }
-.education-info {
-    padding-left: 25px;
+
+img.img-site-resize {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    filter: grayscale(1);
 }
+
+p.lead { font-size: 14px; padding-left: 0; }
+
+/* ── education ───────────────────────────────────────────────────────────────── */
+
+.education-info { padding-left: 0; }
+
 li.list-group-item {
-    background-color: #000;
-    border: 1px solid #c6e2e6;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    position: relative;
+    padding: 25px;
+    margin-bottom: .85rem;
+    color: var(--muted);
+    background-color: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--elev);
 }
-.list-inline {
-    padding-left: 25px;
+
+/* Bootstrap squares the first and last row of a list-group on their outer edge —
+   every row here is its own card, so all four corners stay at the surface radius. */
+li.list-group-item:first-child,
+li.list-group-item:last-child {
+    border-radius: var(--radius);
 }
-ul li {
-    font-size: 12px;
-}
+
+li.list-group-item h3,
+li.list-group-item h4 { position: relative; z-index: 2; }
+
+.list-inline { padding-left: 0; margin-bottom: 0; }
+
+ul li { font-size: 13px; }
+
+/* the school marks are kept, drained of their own colour so they stay in the system */
 li img {
     position: absolute;
     bottom: 15px;
-    right: 90px;
+    right: 20px;
     max-width: 175px;
     max-height: 175px;
     z-index: 0;
-    opacity: .1;
-}
-#courses {
-    z-index: 2;
-    position: relative;
+    opacity: .08;
+    filter: grayscale(1);
 }
 
-/* #################################################### */
+#courses { z-index: 2; position: relative; }
 
-/* Projects */
+/* ── projects ────────────────────────────────────────────────────────────────── */
 
-/* #################################################### */
-input.btn {
-    font-family: 'Roboto', sans-serif;
-    font-size: 12px;
-}
-.affix {
-    top: 55px;
-    margin-left: 5%;
-    z-index: 9999 !important;
-}
-.card>img {
-    width: 302px;
-}
-div>.container-project {
-    padding: 0px;
-    padding-top: 20px;
-    padding-right: 10px;
-    margin: 0px;
-}
-div.col-sm-9 {
-    font-size: 12px;
-    margin: 0px;
-}
-div.col-12 h2 {
-    color: #c6e2e6;
-}
-#section1 h3 {
-    margin: 0;
-    padding: 0;
-    padding-top: 10px
-}
-div.container-project h2 {
-    color: #002032;
-    padding-left: 25px;
-    margin-top: 0px;
-}
-p.lead {
-    font-size: 12px;
-    padding-left: 10%;
-}
-p>i {}
-nav#myScrollspy.col-sm-2 {
-    margin: 0;
-    margin-right: 25px
-}
-div.container-project .list-group {
-    position: sticky;
-    /* Supported in latest version of Chrome, Firefox, Safari, Opera and Edge browsers */
-    
-    top: 15px;
-    background-color: white;
-}
-a.list-group-item {
-    border: 0;
-    border-bottom: 1px;
-    border-color: red;
-    background-color: white;
-}
-.projects {
-    background-color: blue;
-    height: 100%;
-    padding-bottom: 20px;
-}
-.projects-info {
-    /* background-color: lightgreen; */
-    
-    padding-left: 25px;
-}
+#section1 h3 { margin: 0; padding: 0; padding-top: 10px; }
+
+.projects-info { padding-left: 0; }
+
 .card {
-    background-color: white;
-    /* If you assign a width, and have more than two columns, will break */
-    
-    width: 90%;
-    padding-right: 10px;
-    font-family: 'Roboto', sans-serif;
-}
-.card-title {
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
-    padding-left: 10px;
-}
-.card-text {
-    font-size: 12px;
-    padding: 0px;
-    padding-left: 25px;
-    margin: 0;
-}
-div.card-body {
-    color: black;
-    margin: 0px;
-    padding: 0px;
-    padding-top: 8px;
     width: 100%;
+    padding-right: 0;
+    overflow: hidden;
+    background-color: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--elev);
 }
 
-/* #################################################### */
+.card > img { display: block; width: 100%; }
 
-/* #################################################### */
+/* Bootstrap rounds .card-img-top by (radius - 1px), which is a hairline off the
+   card's own corner; the card clips its contents, so let it. */
+.card-img-top { border-radius: 0; }
 
-/* Contact */
-.contact {
-    background-color: purple;
-    height: 250px;
-    color: white;
+.card-title {
+    margin: .9rem 0 .35rem;
+    padding-left: 0;
+    color: var(--ink);
+    font-size: 16px;
+    font-weight: 700;
 }
 
-/* Basic anchors */
-a {
-    color: white;
+.card-text { margin: 0; padding: 0; color: var(--muted); font-size: 13px; }
+
+div.card-body { width: 100%; margin: 0; padding: 1rem 1.15rem 1.15rem; color: var(--ink); }
+
+div > .container-project { margin: 0; padding: 0; padding-top: 20px; padding-right: 0; }
+
+div.container-project h2 { margin-top: 0; padding-left: 0; color: var(--ink); }
+
+div.container-project .list-group { position: sticky; top: 15px; background-color: var(--paper); }
+
+input.btn { font-family: var(--font); font-size: 13px; }
+
+.btn-primary {
+    padding: .45rem 1rem;
+    color: var(--paper);
+    background: var(--accent);
+    border-color: var(--accent);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
 }
-a:hover {
-    color: grey;
+
+.btn-primary:hover,
+.btn-primary:focus {
+    color: var(--paper);
+    background: var(--ink);
+    border-color: var(--ink);
+}
+
+/* ── contact ─────────────────────────────────────────────────────────────────── */
+
+.contact { height: auto; color: var(--ink); }
+
+.contact h4 {
+    margin-bottom: .5rem;
+    color: var(--ink);
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.contact a { display: inline-flex; color: var(--muted); }
+.contact a:hover { color: var(--accent); text-decoration: none; }
+.contact a svg { width: 30px; height: 30px; fill: currentColor; }
+
+/* ── small screens ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 992px) {
+    header.main-bg { background: var(--ink); background-image: none; }
+    header #header { padding-bottom: 2rem; }
+    header h1 { font-size: 2rem; }
+    .container { max-width: 90%; }
+}
+
+@media (max-width: 768px) {
+    .img-site-resize { margin-top: 15px; }
 }
